@@ -21,6 +21,7 @@ null        Vacio               Ej: null
 // en python edad = 30
 // en kotlin var edad: Integer = 30; -> Mutable
 // en kotlin val edad: Integer = 30; -> Inmutable
+// javascript es un lenguaje no tipado
 
 let edad = 30; // Mutable -> cambia
 const IVA = 12;
