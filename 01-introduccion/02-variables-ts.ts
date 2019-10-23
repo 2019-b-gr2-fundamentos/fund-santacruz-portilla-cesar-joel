@@ -15,7 +15,7 @@ console.log(typeof palabra)
 console.log(typeof tipos)
 console.log(typeof casado)
 console.log(typeof fecha)
-console.log(typeof )
+console.log(typeof holaa )
 // Gestor de paquetes de node.js
 // npm y yarn
 // comunicarse con el repositorio y descargar el paquete
