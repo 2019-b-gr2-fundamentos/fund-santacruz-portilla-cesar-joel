@@ -64,3 +64,4 @@ console.log(NombreLongutud.length);
 console.log(NombreLongutud.trim());
 console.log(NombreLongutud.toUpperCase());
 console.log(NombreLongutud.length);
+console.log(NombreLongutud.replace( "a", "o"));
