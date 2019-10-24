@@ -20,30 +20,48 @@ result =1 ^ 2;
 //mod
 result = 4 % 2; //0
 result = 7 % 3; //1
-//console.log("pera" + 2);
+console.log("pera" + 2);
 
 function add (a, b) {
     return Math.abs(a + b);
   }
+//add
 
   console.log(add(3, 5));
-  // expected output: 2
   
   console.log(add(5, 3));
-  // expected output: 2
   
   console.log(add(1.23456, 7.89012));
   
+//difference
+
 function difference(a, b) {
     return Math.abs(a - b);
   }
   
   console.log(difference(3, 5));
-  // expected output: 2
   
   console.log(difference(5, 3));
-  // expected output: 2
   
   console.log(difference(1.23456, 7.89012));
-  // expected output: 6.6555599999999995
   
+
+//STRINGS
+const mensaje = '\"Hola mundo\"';
+const saludo = '"Adio\s mundo"';
+console.log(mensaje +'\t' + saludo);
+//Template string
+const edad = '19';
+const saludoEdad = `Mi edad es: ${edad}`;
+console.log (saludoEdad);
+const saludocompleto = `esto quiero decir: \n${mensaje}\n${saludo}`
+console.log(saludocompleto)
+//Contamos los elementos
+
+const NombreLongutud = "CesarJoelSantacruzPortilla";
+console.log(NombreLongutud.length);
+//Eliminar espacios al inicio y al final
+console.log(NombreLongutud.trim());
+console.log(NombreLongutud.toUpperCase());
+console.log(NombreLongutud.length);
+console.log(NombreLongutud.replace( "a", "o"));
