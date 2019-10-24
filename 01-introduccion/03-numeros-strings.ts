@@ -58,10 +58,13 @@ const saludocompleto = `esto quiero decir: \n${mensaje}\n${saludo}`
 console.log(saludocompleto)
 //Contamos los elementos
 
-const NombreLongutud = "CesarJoelSantacruzPortilla";
+const NombreLongutud = "Cesar Joel Santacruz Portilla";
 console.log(NombreLongutud.length);
 //Eliminar espacios al inicio y al final
 console.log(NombreLongutud.trim());
 console.log(NombreLongutud.toUpperCase());
 console.log(NombreLongutud.length);
 console.log(NombreLongutud.replace( "a", "o"));
+console.log(NombreLongutud.replace( "b", "o"));
+console.log(NombreLongutud.replace( "c", "o"));
+console.log(NombreLongutud.search("Cesar"));
