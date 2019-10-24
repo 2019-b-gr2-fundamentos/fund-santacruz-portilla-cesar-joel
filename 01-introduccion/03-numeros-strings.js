@@ -62,3 +62,4 @@ console.log(NombreLongutud.indexOf("a"));
 console.log(NombreLongutud.includes("x"));
 console.log(NombreLongutud.endsWith("lla"));
 console.log(NombreLongutud.substring(0, 6));
+//que podemos hacer con strings, funciones iguales
