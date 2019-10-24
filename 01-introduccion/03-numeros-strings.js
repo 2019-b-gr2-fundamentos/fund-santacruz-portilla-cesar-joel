@@ -21,6 +21,7 @@ result = 1 ^ 2;
 result = 4 % 2; //0
 result = 7 % 3; //1
 console.log("pera" + 2);
+
 function add(a, b) {
     return Math.abs(a + b);
 }
@@ -43,5 +44,21 @@ console.log(mensaje + '\t' + saludo);
 var edad = '19';
 var saludoEdad = "Mi edad es: " + edad;
 console.log(saludoEdad);
-var saludocompleto = "esto quiero decir: \n " + mensaje + "\n" + saludo;
+var saludocompleto = "esto quiero decir: \n" + mensaje + "\n" + saludo;
 console.log(saludocompleto);
+//Contamos los elementos
+var NombreLongutud = "Cesar Joel Santacruz Portilla";
+console.log(NombreLongutud.length);
+//Eliminar espacios al inicio y al final
+console.log(NombreLongutud.trim());
+console.log(NombreLongutud.toUpperCase());
+console.log(NombreLongutud.length);
+console.log(NombreLongutud.replace("a", "o"));
+console.log(NombreLongutud.replace("b", "o"));
+console.log(NombreLongutud.replace("c", "o"));
+console.log(NombreLongutud.search("Cesar"));
+console.log(NombreLongutud.slice(0, 5));
+console.log(NombreLongutud.indexOf("a"));
+console.log(NombreLongutud.includes("x"));
+console.log(NombreLongutud.endsWith("lla"));
+console.log(NombreLongutud.substring(0, 6));
