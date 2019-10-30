@@ -94,3 +94,50 @@ esta en modo silencio o
 se atraso a clase
 caso contrario 
 esta llorando hecho bolita*/
+
+//truty
+const nombreVacio = "";
+if (nombreVacio){
+    console.log("truty")
+}else{
+    console.log("falsy")
+}//falsy
+
+const nombreVacio = "";
+if ("ndsadasda"){
+    console.log("truty")
+}else{
+    console.log("falsy")
+}//truty
+
+const nombreVacio = "";
+if (nombreVacio){
+    console.log("truty")
+}else{
+    console.log("falsy")
+}//falsy
+
+const nombreVacio = "";
+if (-4){
+    console.log("truty")
+}else{
+    console.log("falsy")
+}//truty
+
+if (4){
+    console.log("truty")
+}else{
+    console.log("falsy")
+}//truty
+
+if (1.2){
+    console.log("truty")
+}else{
+    console.log("falsy")
+}//truty
+
+if (0){
+    console.log("truty")
+}else{
+    console.log("falsy")
+}//falsy
