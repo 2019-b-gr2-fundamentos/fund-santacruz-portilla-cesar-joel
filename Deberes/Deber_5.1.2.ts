@@ -1,8 +1,8 @@
 const dieta = prompt(" Ingrese el alimento que va a consumir ");
-const operacion01 = "vegetales";
-const operacion02 = "carnes";
-const operacion03 = "lacteos";
-if (dieta == operacion01) {
+const operacion03 = "vegetales";
+const operacion04 = "carnes";
+const operacion05 = "lacteos";
+if (dieta == operacion03) {
     const cantidadString = prompt(" Ingrese cantidad gr ");
     const cantidad = Number(cantidadString);
     if (cantidad >= 400) {
@@ -11,13 +11,13 @@ if (dieta == operacion01) {
         console.log("debes consumir mas")
     }
 } else {
-    if (dieta == operacion02) {
+    if (dieta == operacion04) {
         const cantidadString = prompt(" Ingrese cantidad gr ");
         const cantidad = Number(cantidadString);
         if (cantidad >= 200 && cantidad <= 700 ) {
             console.log("Bueno para la salud");
             } else {
-                    if (dieta == operacion03) {
+                    if (dieta == operacion05) {
                         const cantidadString = prompt(" Ingrese cantidad gr ");
                         const cantidad = Number(cantidadString);
                         if (cantidad <= 100 ) {
