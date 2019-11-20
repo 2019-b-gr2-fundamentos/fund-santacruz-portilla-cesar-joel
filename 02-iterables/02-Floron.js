@@ -11,6 +11,7 @@ const arreglo = [];
 for (let tamanio = prompt("ingrese el tamanio del arreglo"); tamanio > 0; tamanio--) {
     arreglo.push(Math.floor(Math.random() * 2));
 }
+/*
 let number = -1;
 let suma = 0;
 do {
@@ -23,3 +24,13 @@ if (suma >= 1) {
 } else {
     console.log("hola")
 }
+*/
+
+/*
+1. Definir el numero de jugadoresPrimerobundleRenderer.
+2. Asignar a los jugadores que tendran el floron y los que no
+3. Verificar que almenos un jugador tenga el floron
+4. Adividar donde esta el floron
+tenemos el arreglo con n posiciones iniciamos con la posicion 0
+generamos un indice de 0 a 9 que sea randomico y a ese le asignamos el 1
+*/
