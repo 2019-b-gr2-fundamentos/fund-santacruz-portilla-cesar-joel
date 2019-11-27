@@ -10,11 +10,14 @@ function multiplicar(numUno, numDos) {
 function dividir(numUno, numDos) {
     return numUno / numDos;
 }
+function borracho(numUno, numDos) {
+    return numUno / 150 * numDos;
+}
 function main() {
     calculadora();
 }
 function calculadora() {
-    var operacion = prompt('Selecciona una operacion:\n "suma-1",\n "resta-2",\n "multiplicacion-3",\n "division-4",\n "terminamos-5');
+    var operacion = prompt('Selecciona una operacion:\n "suma-1",\n "resta-2",\n "multiplicacion-3",\n "division-4",\n "terminamos-5"\n "%borracho-6"');
     var esSuma = operacion == "suma" ||
         operacion == "1" ||
         operacion == "suma-1";
@@ -30,7 +33,10 @@ function calculadora() {
     var seTermino = operacion == "terminamos" ||
         operacion == "5" ||
         operacion == "terminamos-5";
-    var estaValida = esSuma || esResta || esDivision || esMultiplicacion;
+    var esBorracho = operacion == "esta borracho" ||
+        operacion == "6" ||
+        operacion == "esta borracho-6";
+    var estaValida = esSuma || esResta || esDivision || esMultiplicacion || esBorracho;
     if (estaValida) {
         var numUno = +prompt("Numero 1");
         var resultado = 0;
@@ -49,6 +55,11 @@ function calculadora() {
                 else {
                     if (esDivision) {
                         resultado = dividir(numUno, numDos);
+                    }
+                    else {
+                        if (esBorracho) {
+                            resultado = borracho(numUno, numDos);
+                        }
                     }
                 }
             }

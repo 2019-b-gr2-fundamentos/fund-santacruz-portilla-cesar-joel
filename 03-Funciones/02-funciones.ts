@@ -10,12 +10,15 @@ function multiplicar(numUno:number, numDos:number) :number{
 function dividir(numUno:number, numDos:number) :number{
     return numUno / numDos;
 }
+function borracho(numUno:number, numDos:number) :number{
+    return numUno/150 * numDos;
+}
 
 function main(){
 calculadora();
 }
 function calculadora(){
-    const operacion:string = prompt('Selecciona una operacion:\n "suma-1",\n "resta-2",\n "multiplicacion-3",\n "division-4",\n "terminamos-5');
+    const operacion:string = prompt('Selecciona una operacion:\n "suma-1",\n "resta-2",\n "multiplicacion-3",\n "division-4",\n "terminamos-5"\n "%borracho-6"');
     const esSuma:boolean = operacion == "suma" ||
     operacion =="1" ||
     operacion == "suma-1";
@@ -31,9 +34,10 @@ function calculadora(){
     const seTermino:boolean = operacion == "terminamos" ||
     operacion =="5" ||
     operacion == "terminamos-5";
-
-    const estaValida:boolean = esSuma || esResta || esDivision || esMultiplicacion;
-    
+    const esBorracho:boolean = operacion == "esta borracho" ||
+    operacion =="6" ||
+    operacion == "esta borracho-6";
+    const estaValida:boolean = esSuma || esResta || esDivision || esMultiplicacion || esBorracho;
     if(estaValida){
     const numUno:number = +prompt("Numero 1");
     let resultado = 0;
@@ -49,6 +53,10 @@ function calculadora(){
             }else{
                 if(esDivision){
                    resultado =  dividir(numUno, numDos);
+                }else{
+                    if(esBorracho){
+                        resultado = borracho(numUno, numDos);
+                    }
                 }
             }
         }
