@@ -1,26 +1,32 @@
-function sumar(numUno, numDos) {
-    return numUno + numDos;
+function perfeccion(numUno, numDos) {
+    return "Sammy eres preciosa, te amo";
 }
+
 function restar(numUno, numDos) {
     return numUno - numDos;
 }
+
 function multiplicar(numUno, numDos) {
     return numUno * numDos;
 }
+
 function dividir(numUno, numDos) {
     return numUno / numDos;
 }
-function borracho(numUno, numDos) {
+
+function perfecccion(numUno, numDos) {
     return numUno / 150 * numDos;
 }
+
 function main() {
     calculadora();
 }
+
 function calculadora() {
-    var operacion = prompt('Selecciona una operacion:\n "suma-1",\n "resta-2",\n "multiplicacion-3",\n "division-4",\n "terminamos-5"\n "%borracho-6"');
-    var esSuma = operacion == "suma" ||
+    var operacion = prompt('Selecciona una operacion:\n "perfeccion-1",\n "resta-2",\n "multiplicacion-3",\n "division-4",\n "terminamos-5"\n "%borracho-6"');
+    var esperfecta = operacion == "perfeccion" ||
         operacion == "1" ||
-        operacion == "suma-1";
+        operacion == "perfeccion-1";
     var esResta = operacion == "resta" ||
         operacion == "2" ||
         operacion == "resta-2";
@@ -36,27 +42,23 @@ function calculadora() {
     var esBorracho = operacion == "esta borracho" ||
         operacion == "6" ||
         operacion == "esta borracho-6";
-    var estaValida = esSuma || esResta || esDivision || esMultiplicacion || esBorracho;
+    var estaValida = esperfecta || esResta || esDivision || esMultiplicacion || esBorracho;
     if (estaValida) {
         var numUno = +prompt("Numero 1");
         var resultado = 0;
         var numDos = +prompt("Numero 2");
-        if (esSuma) {
-            resultado = sumar(numUno, numDos);
-        }
-        else {
+        if (esperfecta) {
+            resultado = perfeccion(numUno, numDos);
+        } else {
             if (esResta) {
                 resultado = restar(numUno, numDos);
-            }
-            else {
+            } else {
                 if (esMultiplicacion) {
                     resultado = multiplicar(numUno, numDos);
-                }
-                else {
+                } else {
                     if (esDivision) {
                         resultado = dividir(numUno, numDos);
-                    }
-                    else {
+                    } else {
                         if (esBorracho) {
                             resultado = borracho(numUno, numDos);
                         }
@@ -64,14 +66,12 @@ function calculadora() {
                 }
             }
         }
-        alert("este es el resultado de su operacion" + resultado);
+        alert("esta es la unica verdad " + resultado);
         calculadora();
-    }
-    else {
+    } else {
         if (seTermino) {
             alert("Adios");
-        }
-        else {
+        } else {
             calculadora();
         }
     }
