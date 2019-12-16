@@ -48,98 +48,109 @@ la calculadora, lo siguiente a hacer es definir
 como tal la funcion de la calculadora
 =end
 def calculadora()
-  print " 1.Suma \n 2.Resta \n 3.Multiplicacion \n 4.Division \n 5.Potencia \n 6.Area circunferencia \n 7.Area rectangulo \n 8.Area triangulo \n 9.Volumen esfera \n 10. % Alcohol en la sangre \n 11.Amor de ella hacia ti \n 12.Salir \n Escoja la operacion deseada de la lista de arriba:"
+  print " 1.Suma \n 2.Resta \n 3.Multiplicacion \n 4.Division \n 5.Potencia \n 6.Area circunferencia \n 7.Area rectangulo \n 8.Area triangulo \n 9.Volumen esfera \n 10. % Alcohol en la sangre \n 11.Amor de ella hacia ti \n 12.Salir \n Escoja la operacion deseada de la lista de arriba: \n"
   operacion = gets.to_i
   if operacion == 1
-    print "numero 1"
+    print "numero 1 \n"
     numuno = gets.to_i
-    print "numero 2"
+    print "numero 2 \n"
     numdos = gets.to_i
-    print "numero 3"
+    print "numero 3 \n"
     numtres = gets.to_i
-    print "numero 4"
+    print "numero 4 \n"
     numcuatro = gets.to_i
-    print "numero 5"
+    print "numero 5 \n"
     numcinco = gets.to_i
-    puts "el resultado de la suma es #{sumar(numuno, numdos, numtres, numcuatro, numcinco)}"
+    puts "el resultado de la suma es #{sumar(numuno, numdos, numtres, numcuatro, numcinco)} \n"
+    sleep(4)
     calculadora
   else
     if operacion == 2
-      print "numero 1"
+      print "numero 1 \n"
       numuno = gets.to_i
-      print "numero 2"
+      print "numero 2 \n"
       numdos = gets.to_i
-      puts "el resultado de la resta es #{restar(numuno, numdos)}"
+      puts "el resultado de la resta es #{restar(numuno, numdos)} \n"
+      sleep(4)
       calculadora
     else
       if operacion == 3
-        print "numero1 "
+        print "numero1 \n"
         numuno = gets.to_i
-        print "numero2 "
+        print "numero2 \n"
         numdos = gets.to_i
-        puts "el resultado de la multiplicacion es #{multiplicar(numuno, numdos)}"
+        puts "el resultado de la multiplicacion es #{multiplicar(numuno, numdos)} \n"
+        sleep(4)
         calculadora
       else
         if operacion == 4
-          print "numero 1"
+          print "numero 1 \n"
           numuno = gets.to_i
-          print "numero 2"
+          print "numero 2 \n"
           numdos = gets.to_i
-          puts "el resultado de la division es #{dividir(numuno, numdos)}"
+          puts "el resultado de la division es #{dividir(numuno, numdos)} \n"
+          sleep(4)
           calculadora
         else
           if operacion == 5
-            print "numero1"
+            print "numero1 \n"
             numuno = gets.to_i
-            puts "el resultado de la potencia es #{potencia(numuno)}"
+            puts "el resultado de la potencia es #{potencia(numuno)} \n"
+            sleep(4)
             calculadora
           else
             if operacion == 6
-              print "radio"
+              print "radio \n"
               numuno = gets.to_i
-              puts "el area de la circunferencia es #{area_circunferencia(numuno)}"
+              puts "el area de la circunferencia es #{area_circunferencia(numuno)} \n"
+              sleep(4)
               calculadora
             else
               if operacion == 7
-                print "base"
+                print "base \n"
                 numuno = gets.to_i
-                print "altura"
+                print "altura \n"
                 numdos = gets.to_i
-                puts "el area del rectangulo es #{area_rectangulo(numuno, numdos)}"
+                puts "el area del rectangulo es #{area_rectangulo(numuno, numdos)} \n"
+                sleep(4)
                 calculadora
               else
                 if operacion == 8
-                  print "base"
+                  print "base \n"
                   numuno = gets.to_i
-                  print "altura"
+                  print "altura \n"
                   numdos = gets.to_i
-                  puts "el area del triangulo es #{area_triangulo(numuno, numdos)}"
+                  puts "el area del triangulo es #{area_triangulo(numuno, numdos)} \n"
+                  sleep(4)
                   calculadora
                 else
                   if operacion == 9
-                    print "radio"
+                    print "radio \n"
                     numuno = gets.to_i
-                    puts "el volumen de la esfera de radio #{numuno} es #{volumen_esfera(numuno)}"
+                    puts "el volumen de la esfera de radio #{numuno} es #{volumen_esfera(numuno)} \n"
+                    sleep(4)
                     calculadora
                   else
                     if operacion == 10
-                      print "gr de alcohol puro ingeridos \n (% por volumen total)"
+                      print "gr de alcohol puro ingeridos \n (% por volumen total) \n"
                       numuno = gets.to_i
-                      print "peso en kg de quien consume"
+                      print "peso en kg de quien consume \n"
                       numdos = gets.to_i
-                      puts "Porcentaje de alcohol en la sangre es #{borracho(numuno, numdos)}"
+                      puts "Porcentaje de alcohol en la sangre es #{borracho(numuno, numdos)} \n"
+                      sleep(4)
                       calculadora
                     else
                       if operacion == 11
-                        print "Ingrese su cantidad de amor hacia ella 1 AL 100"
+                        print "Ingrese su cantidad de amor hacia ella 1 AL 100 \n"
                         numuno = gets.to_i
-                        puts "No importa que la quieras #{numuno} de 100 ella nunca te va amar"
+                        puts "No importa que la quieras #{numuno} de 100 ella nunca te va amar \n"
+                        sleep(4)
                         calculadora
                         else
                           if operacion == 12
-                             print "ADIOS, SEE YOU SOON \n (By: Cesar Santacruz)"
+                             print "ADIOS, SEE YOU SOON \n (By: Cesar Santacruz) \n"
                           else
-                        end
+                          end
                       end
                     end
                   end
