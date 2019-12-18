@@ -3,16 +3,27 @@ const arregloMatriz = [
     [3,4,5],
     [6,7,8],
     [9],
-    1
 ]
 function compararMatriz(
     matrizUno: number [][],
     matrizDos: number [][]
 ): boolean {
+    const matrizUnoPrimeraDimension = obtenerPrimeraDimension(
+        matrizUno
+        );
+    const matrizUnoSegundaDimension = obtenerSegundaDimension(
+        matrizUno
+        );
+    const matrizDosPrimeraDimension = obtenerPrimeraDimension(
+        matrizDos
+        );
+    const matrizDosSegundaDimension = obtenerSegundaDimension(
+        matrizDos
+        );
     return true;
 }
 
-function obtenerPrimeraDimension(matrizUno: number [][]): number | false{//use | para anadir mas tipos
+function obtenerPrimeraDimension(matrizUno: number [][]): number | boolean{//use | para anadir mas tipos
     //validaciones
     const esValido = verificarTodosLosElementosDeUnArregloSonarreglo(matrizUno);
     if(esValido){
@@ -23,8 +34,9 @@ function obtenerPrimeraDimension(matrizUno: number [][]): number | false{//use |
     }
 }
 
-function obtenerSegundaDimension(matrizUno: number [][]): number | false{
+function obtenerSegundaDimension(matrizUno: number [][]): number | boolean{
     const esValido = verificarTodosLosElementosDeUnArregloSonarreglo(matrizUno);
+    if(esValido){
     let longitudActualMax = 0; // auxiliar
     let longitudActualMin = -1; //auxiliar
     for(let i = 0; i < matrizUno.length; i++){
@@ -33,7 +45,7 @@ function obtenerSegundaDimension(matrizUno: number [][]): number | false{
         if(longitudActualMax < longitudActual){
             longitudActualMax = longitudActual;
         }
-        if(longitudActualMin == -1 {
+        if(longitudActualMin == -1){
             longitudActualMin = longitudActual;
         }else{
             if(longitudActual < longitudActualMin){
@@ -41,7 +53,14 @@ function obtenerSegundaDimension(matrizUno: number [][]): number | false{
             }
         }
     }
-    return false;
+    if(longitudActualMax != longitudActualMin){
+        return false;
+    }else{
+        return matrizUno[0].length;
+        }
+    }else{
+    return false
+    }
 }
 //usar funcion para ver si es arreglo
 
@@ -57,4 +76,16 @@ function verificarTodosLosElementosDeUnArregloSonarreglo (arreglo: any[]
         }
     }
     return true;
+}
+
+function main(){
+    const matrizUno = [
+        [1,2],
+        [3]
+    ];
+    const matrizDos = [
+        [1,2],
+        [3,4],
+    ];
+    compararMatriz(matrizUno, matrizDos);
 }
