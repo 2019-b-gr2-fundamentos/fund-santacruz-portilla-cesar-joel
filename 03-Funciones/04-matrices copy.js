@@ -1,9 +1,3 @@
-var arregloMatriz = [
-    [1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [9],
-];
 function compararMatriz(matrizUno, matrizDos) {
     var matrizUnoPrimeraDimension = obtenerPrimeraDimension(matrizUno);
     var matrizUnoSegundaDimension = obtenerSegundaDimension(matrizUno);
@@ -13,8 +7,37 @@ function compararMatriz(matrizUno, matrizDos) {
     console.log(matrizUnoSegundaDimension);
     console.log(matrizDosPrimeraDimension);
     console.log(matrizDosSegundaDimension);
-    return true;
+    const noHayFalsos = matrizUnoPrimeraDimension != false &&
+        matrizUnoSegundaDimension != false &&
+        matrizDosPrimeraDimension != false &&
+        matrizDosSegundaDimension != false
+    if ( noHayFalsos ){
+        const tieneIgualDimension = matrizUnoPrimeraDimension == matrizDosPrimeraDimension &&
+        matrizUnoSegundaDimension == matrizDosSegundaDimension
+        if (tieneIgualDimension)
+            return true;
+    }else{
+        return false;
+    }
 }
+function tienenMismosValores(
+    matrizUno: number [][],
+    matrizDos: number [][];
+    ):boolean{
+        var primeraDimension = matrizUno.length;
+        var segundaDimension = matrizUno[0].length;
+        var banderaSonIguales = true;
+        for(let i = 0; i< primeraDimension; i++){
+           for( let j = 0; j< segundaDimension; j++){
+               const valorActualM1 = matrizUno[i][j];
+               const valorActualM2 = matrizDos[i][j];
+               if(valorActualM1 != valorActualM2){
+                   banderaSonIguales = false;
+               }
+           }
+        }
+        return banderaSonIguales;
+    }
 function obtenerPrimeraDimension(matrizUno) {
     //validaciones
     var esValido = verificarTodosLosElementosDeUnArregloSonarreglo(matrizUno);
@@ -73,11 +96,12 @@ function verificarTodosLosElementosDeUnArregloSonarreglo(arreglo) {
 function main() {
     var matrizUno = [
         [1, 2],
-        [3]
+        [3, 2]
     ];
     var matrizDos = [
         [1, 2],
         [3, 4],
     ];
-    compararMatriz(matrizUno, matrizDos);
+    const resultado = compararMatriz(matrizUno, matrizDos)
+    console.log(resultado);
 }
