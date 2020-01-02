@@ -7,7 +7,7 @@ function compararMatriz(matrizUno, matrizDos) {
     console.log(matrizUnoSegundaDimension);
     console.log(matrizDosPrimeraDimension);
     console.log(matrizDosSegundaDimension);
-    const noHayFalsos = matrizUnoPrimeraDimension != false &&
+    var noHayFalsos = matrizUnoPrimeraDimension != false &&
         matrizUnoSegundaDimension != false &&
         matrizDosPrimeraDimension != false &&
         matrizDosSegundaDimension != false
@@ -15,15 +15,14 @@ function compararMatriz(matrizUno, matrizDos) {
         const tieneIgualDimension = matrizUnoPrimeraDimension == matrizDosPrimeraDimension &&
         matrizUnoSegundaDimension == matrizDosSegundaDimension
         if (tieneIgualDimension)
-            return true;
+            return tienenMismosValores(
+                matrizUno,
+                matrizDos);
     }else{
         return false;
     }
 }
-function tienenMismosValores(
-    matrizUno: number [][],
-    matrizDos: number [][];
-    ):boolean{
+function tienenMismosValores ( ){
         var primeraDimension = matrizUno.length;
         var segundaDimension = matrizUno[0].length;
         var banderaSonIguales = true;
