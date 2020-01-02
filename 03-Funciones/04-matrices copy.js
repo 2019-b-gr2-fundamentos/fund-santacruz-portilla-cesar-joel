@@ -9,6 +9,10 @@ function compararMatriz(matrizUno, matrizDos) {
     var matrizUnoSegundaDimension = obtenerSegundaDimension(matrizUno);
     var matrizDosPrimeraDimension = obtenerPrimeraDimension(matrizDos);
     var matrizDosSegundaDimension = obtenerSegundaDimension(matrizDos);
+    console.log(matrizUnoPrimeraDimension);
+    console.log(matrizUnoSegundaDimension);
+    console.log(matrizDosPrimeraDimension);
+    console.log(matrizDosSegundaDimension);
     return true;
 }
 function obtenerPrimeraDimension(matrizUno) {
