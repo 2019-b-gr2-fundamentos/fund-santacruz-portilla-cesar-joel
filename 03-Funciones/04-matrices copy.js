@@ -7,6 +7,7 @@ function compararMatriz(matrizUno, matrizDos) {
     console.log(matrizUnoSegundaDimension);
     console.log(matrizDosPrimeraDimension);
     console.log(matrizDosSegundaDimension);
+
     var noHayFalsos = matrizUnoPrimeraDimension != false &&
         matrizUnoSegundaDimension != false &&
         matrizDosPrimeraDimension != false &&
@@ -37,70 +38,70 @@ function tienenMismosValores ( ){
         }
         return banderaSonIguales;
     }
+
 function obtenerPrimeraDimension(matrizUno) {
-    //validaciones
-    var esValido = verificarTodosLosElementosDeUnArregloSonarreglo(matrizUno);
+    // VALIDACIONES
+    var esValido = verificarTodosLosElementosDeUnArregloSonArreglo(matrizUno);
     if (esValido) {
         var primeraDimensionArreglo = matrizUno.length;
         return primeraDimensionArreglo;
-    }
-    else {
+    } else {
         return false;
     }
 }
+
 function obtenerSegundaDimension(matrizUno) {
-    var esValido = verificarTodosLosElementosDeUnArregloSonarreglo(matrizUno);
+    var esValido = verificarTodosLosElementosDeUnArregloSonArreglo(matrizUno);
     if (esValido) {
-        var longitudActualMax = 0; // auxiliar
-        var longitudActualMin = -1; //auxiliar
+        var longitudActualMaxima = 0; // Auxiliar
+        var longitudActualMinima = -1; // Auxiliar
         for (var i = 0; i < matrizUno.length; i++) {
-            var elementoActual = matrizUno[i]; //arreglo
-            var longitudActual = elementoActual.length; //segunda dimension
-            if (longitudActualMax < longitudActual) {
-                longitudActualMax = longitudActual;
+            var elementoActual = matrizUno[i]; // arreglo
+            var longitudActual = elementoActual.length; // segunda dimension
+            if (longitudActualMaxima < longitudActual) {
+                longitudActualMaxima = longitudActual;
             }
-            if (longitudActualMin == -1) {
-                longitudActualMin = longitudActual;
-            }
-            else {
-                if (longitudActual < longitudActualMin) {
-                    longitudActualMin = longitudActual;
+            if (longitudActualMinima == -1) {
+                longitudActualMinima = longitudActual;
+            } else {
+                if (longitudActual < longitudActualMinima) {
+                    longitudActualMinima = longitudActual;
                 }
             }
         }
-        if (longitudActualMax != longitudActualMin) {
+        if (longitudActualMaxima != longitudActualMinima) {
             return false;
-        }
-        else {
+        } else {
             return matrizUno[0].length;
         }
-    }
-    else {
+    } else {
         return false;
     }
 }
-//usar funcion para ver si es arreglo
-function verificarTodosLosElementosDeUnArregloSonarreglo(arreglo) {
+
+function verificarTodosLosElementosDeUnArregloSonArreglo(arreglo) {
     for (var i = 0; i < arreglo.length; i++) {
         var elementoActual = arreglo[i];
         var esUnArreglo = typeof elementoActual == 'object' &&
-            elementoActual.indexOf; // truty
+            elementoActual.indexOf; // Truty
         if (!esUnArreglo) {
-            alert("No es un arreglo");
             return false;
         }
     }
     return true;
 }
+
 function main() {
-    var matrizUno = [
+    var x = [
         [1, 2],
         [3, 2]
     ];
-    var matrizDos = [
+    var y = [
         [1, 2],
         [3, 4],
     ];
+
     const resultado = compararMatriz(matrizUno, matrizDos)
     console.log(resultado);
 }
+main();
