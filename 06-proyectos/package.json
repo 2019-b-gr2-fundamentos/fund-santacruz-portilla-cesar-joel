@@ -4,11 +4,11 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "empezar": "tsc index.ts && node index.js"
+        "empezar": "node index.js"
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "libreria-cssu": "^1.0.1"
+        "libreria-cssu": "^1.2.0"
     }
 }
