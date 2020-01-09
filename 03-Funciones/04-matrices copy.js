@@ -1,11 +1,3 @@
-var arregloMatriz = [
-    [1, 2],
-    [3, 4, 5],
-    [6, 7, 8, 6],
-    [9],
-    [],
-];
-
 function compararMatriz(matrizUno, matrizDos) {
     var matrizUnoPrimeraDimension = obtenerPrimeraDimension(matrizUno);
     var matrizUnoSegundaDimension = obtenerSegundaDimension(matrizUno);
@@ -15,8 +7,37 @@ function compararMatriz(matrizUno, matrizDos) {
     console.log(matrizUnoSegundaDimension);
     console.log(matrizDosPrimeraDimension);
     console.log(matrizDosSegundaDimension);
-    return true;
+
+    var noHayFalsos = matrizUnoPrimeraDimension != false &&
+        matrizUnoSegundaDimension != false &&
+        matrizDosPrimeraDimension != false &&
+        matrizDosSegundaDimension != false
+    if ( noHayFalsos ){
+        const tieneIgualDimension = matrizUnoPrimeraDimension == matrizDosPrimeraDimension &&
+        matrizUnoSegundaDimension == matrizDosSegundaDimension
+        if (tieneIgualDimension)
+            return tienenMismosValores(
+                matrizUno,
+                matrizDos);
+    }else{
+        return false;
+    }
 }
+function tienenMismosValores ( ){
+        var primeraDimension = matrizUno.length;
+        var segundaDimension = matrizUno[0].length;
+        var banderaSonIguales = true;
+        for(let i = 0; i< primeraDimension; i++){
+           for( let j = 0; j< segundaDimension; j++){
+               const valorActualM1 = matrizUno[i][j];
+               const valorActualM2 = matrizDos[i][j];
+               if(valorActualM1 != valorActualM2){
+                   banderaSonIguales = false;
+               }
+           }
+        }
+        return banderaSonIguales;
+    }
 
 function obtenerPrimeraDimension(matrizUno) {
     // VALIDACIONES
@@ -73,12 +94,14 @@ function verificarTodosLosElementosDeUnArregloSonArreglo(arreglo) {
 function main() {
     var x = [
         [1, 2],
-        [3]
+        [3, 2]
     ];
     var y = [
         [1, 2],
         [3, 4],
     ];
-    compararMatriz(x, y);
+
+    const resultado = compararMatriz(matrizUno, matrizDos)
+    console.log(resultado);
 }
 main();
