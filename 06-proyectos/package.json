@@ -9,6 +9,6 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "libreria-cssu": "^1.2.0"
+        "libreria-cssu": "^1.2.1"
     }
 }
