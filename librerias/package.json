@@ -1,6 +1,6 @@
 {
     "name": "libreria-cssu",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "Librerias de fundamentos",
     "main": "index.js",
     "scripts": {

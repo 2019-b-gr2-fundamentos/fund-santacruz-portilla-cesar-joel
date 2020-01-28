@@ -1,0 +1,17 @@
+{
+  "name": "deberuno",
+  "version": "1.0.0",
+  "description": "deberuno",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"(tsc 01-archivos.ts --target ES5|| echo) && node 01-archivos.js\""
+  },
+  "keywords": [
+    "deberuno"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "prompts": "^2.3.0"
+  }
+}

@@ -1,14 +1,14 @@
 {
-    "name": "06-proyectos",
+    "name": "package",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
     "scripts": {
-        "empezar": "node index.js"
+        "start": "(tsc Deber-02-01.ts || echo) && node Deber02-01.js"
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "libreria-cssu": "^1.2.1"
+        "prompts": "^2.3.0"
     }
 }
