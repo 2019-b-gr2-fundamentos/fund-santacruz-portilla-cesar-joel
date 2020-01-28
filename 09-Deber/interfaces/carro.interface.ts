@@ -1,4 +1,4 @@
-export interface Estudiante {
+export interface carro {
     id: number;
     nombre: string;
     modelo: string;

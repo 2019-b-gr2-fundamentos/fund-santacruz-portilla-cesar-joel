@@ -41,7 +41,7 @@ var _03_escribir_archivo_1 = require("./03-escribir-archivo");
 var prompts = require("prompts");
 function main() {
     return __awaiter(this, void 0, void 0, function () {
-        var contenidoArchivo, arregloCargadoDeArchivo, contador, minimoId, arregloEstudiantes, arregloPreguntas, opcion, _a, respuestaEstudianteUno, nuevoRegistroUno, respuestaEstudianteDos, nuevoRegistroDos, idABuscar_1, indiceEncontrado, nombreAEditar, buscar_1, estudianteEncontrado, arregloTexto;
+        var contenidoArchivo, arregloCargadoDeArchivo, contador, minimoId, arregloEstudiantes, arregloPreguntas, opcion, _a, respuestaEstudianteUno, nuevoRegistroUno, idABuscar_1, indiceEncontrado, nombreAEditar, idABuscar2_1, indiceEncontrado2, modeloAEditar, idABuscar3_1, indiceEncontrado3, anioAEditar, idABuscar4_1, indiceEncontrado4, origenAEditar, idABuscar5_1, indiceEncontrado5, precioAEditar, buscar_1, estudianteEncontrado, arregloTexto;
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
@@ -103,7 +103,11 @@ function main() {
                     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                     console.log("\nESCOGA UNA LA ACCION QUE DESEA REALIZAR\n");
                     console.log("1.anadir dos datos");
-                    console.log("2.Editar el carro");
+                    console.log("2.1 Editar el carro(nombre)");
+                    console.log("2.2 Editar el carro(modelo)");
+                    console.log("2.3 Editar el carro(anio)");
+                    console.log("2.4 Editar el carro(origen)");
+                    console.log("2.5 Editar el carro(precio)");
                     console.log("3.buscar un carro");
                     console.log("4.Agregar una pelicula");
                     console.log("5.Salir\n");
@@ -113,10 +117,15 @@ function main() {
                     _a = opcion;
                     switch (_a) {
                         case 1: return [3 /*break*/, 2];
-                        case 2: return [3 /*break*/, 6];
-                        case 3: return [3 /*break*/, 10];
+                        case 2.1: return [3 /*break*/, 5];
+                        case 2.2: return [3 /*break*/, 9];
+                        case 2.3: return [3 /*break*/, 13];
+                        case 2.4: return [3 /*break*/, 17];
+                        case 2.5: return [3 /*break*/, 21];
+                        case 3: return [3 /*break*/, 25];
+                        case 4: return [3 /*break*/, 28];
                     }
-                    return [3 /*break*/, 13];
+                    return [3 /*break*/, 30];
                 case 2: return [4 /*yield*/, prompts(arregloPreguntas)];
                 case 3:
                     respuestaEstudianteUno = _b.sent();
@@ -130,26 +139,13 @@ function main() {
                     };
                     contador = contador + 1;
                     arregloEstudiantes.push(nuevoRegistroUno);
-                    return [4 /*yield*/, prompts(arregloPreguntas)];
-                case 4:
-                    respuestaEstudianteDos = _b.sent();
-                    nuevoRegistroDos = {
-                        id: contador,
-                        nombre: respuestaEstudianteDos.nombre,
-                        modelo: respuestaEstudianteDos.modelo,
-                        anio: respuestaEstudianteDos.anio,
-                        origen: respuestaEstudianteDos.origen,
-                        precio: respuestaEstudianteDos.precio
-                    };
-                    contador = contador + 1;
-                    arregloEstudiantes.push(nuevoRegistroDos);
-                    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
                     console.log('contenidoArchivo', contenidoArchivo);
                     return [4 /*yield*/, funcionOpcion()];
-                case 5:
+                case 4:
                     _b.sent();
-                    return [3 /*break*/, 14];
-                case 6:
+                    return [3 /*break*/, 31];
+                case 5:
                     console.log('Cual carro quieres Editar?');
                     console.log(arregloEstudiantes);
                     return [4 /*yield*/, prompts({
@@ -157,7 +153,7 @@ function main() {
                             name: 'id',
                             message: 'Ingresa el ID del registro a Editar'
                         })];
-                case 7:
+                case 6:
                     idABuscar_1 = _b.sent();
                     indiceEncontrado = arregloEstudiantes.findIndex(// return CONDICION ->
                     function (valorActual) {
@@ -171,15 +167,135 @@ function main() {
                             name: 'nombre',
                             message: 'Ingresa el nuevo nombre'
                         })];
-                case 8:
+                case 7:
                     nombreAEditar = _b.sent();
                     arregloEstudiantes[indiceEncontrado].nombre = nombreAEditar.nombre;
                     console.log(arregloEstudiantes);
                     return [4 /*yield*/, funcionOpcion()];
-                case 9:
+                case 8:
                     _b.sent();
-                    return [3 /*break*/, 14];
-                case 10: return [4 /*yield*/, prompts({
+                    return [3 /*break*/, 31];
+                case 9:
+                    console.log('Cual carro quieres Editar?');
+                    console.log(arregloEstudiantes);
+                    return [4 /*yield*/, prompts({
+                            type: 'number',
+                            name: 'id',
+                            message: 'Ingresa el ID del registro a Editar'
+                        })];
+                case 10:
+                    idABuscar2_1 = _b.sent();
+                    indiceEncontrado2 = arregloEstudiantes.findIndex(// return CONDICION ->
+                    function (valorActual) {
+                        return valorActual.id == idABuscar2_1.id; // Nos devuelve el INDICE
+                    } // Si encuentra nos devuelve el indice
+                    // No encuentra
+                    );
+                    console.log('Indice encontrado:', indiceEncontrado2);
+                    return [4 /*yield*/, prompts({
+                            type: 'text',
+                            name: 'modelo',
+                            message: 'Ingresa el nuevo modelo'
+                        })];
+                case 11:
+                    modeloAEditar = _b.sent();
+                    arregloEstudiantes[indiceEncontrado2].modelo = modeloAEditar.modelo;
+                    console.log(arregloEstudiantes);
+                    return [4 /*yield*/, funcionOpcion()];
+                case 12:
+                    _b.sent();
+                    return [3 /*break*/, 31];
+                case 13:
+                    console.log('Cual carro quieres Editar?');
+                    console.log(arregloEstudiantes);
+                    return [4 /*yield*/, prompts({
+                            type: 'number',
+                            name: 'id',
+                            message: 'Ingresa el ID del registro a Editar'
+                        })];
+                case 14:
+                    idABuscar3_1 = _b.sent();
+                    indiceEncontrado3 = arregloEstudiantes.findIndex(// return CONDICION ->
+                    function (valorActual) {
+                        return valorActual.id == idABuscar3_1.id; // Nos devuelve el INDICE
+                    } // Si encuentra nos devuelve el indice
+                    // No encuentra
+                    );
+                    console.log('Indice encontrado:', indiceEncontrado3);
+                    return [4 /*yield*/, prompts({
+                            type: 'text',
+                            name: 'anio',
+                            message: 'Ingresa el nuevo anio'
+                        })];
+                case 15:
+                    anioAEditar = _b.sent();
+                    arregloEstudiantes[indiceEncontrado3].anio = anioAEditar.anio;
+                    console.log(arregloEstudiantes);
+                    return [4 /*yield*/, funcionOpcion()];
+                case 16:
+                    _b.sent();
+                    return [3 /*break*/, 31];
+                case 17:
+                    console.log('Cual carro quieres Editar?');
+                    console.log(arregloEstudiantes);
+                    return [4 /*yield*/, prompts({
+                            type: 'number',
+                            name: 'id',
+                            message: 'Ingresa el ID del registro a Editar'
+                        })];
+                case 18:
+                    idABuscar4_1 = _b.sent();
+                    indiceEncontrado4 = arregloEstudiantes.findIndex(// return CONDICION ->
+                    function (valorActual) {
+                        return valorActual.id == idABuscar4_1.id; // Nos devuelve el INDICE
+                    } // Si encuentra nos devuelve el indice
+                    // No encuentra
+                    );
+                    console.log('Indice encontrado:', indiceEncontrado4);
+                    return [4 /*yield*/, prompts({
+                            type: 'text',
+                            name: 'origen',
+                            message: 'Ingresa el nuevo origen'
+                        })];
+                case 19:
+                    origenAEditar = _b.sent();
+                    arregloEstudiantes[indiceEncontrado4].origen = origenAEditar.origen;
+                    console.log(arregloEstudiantes);
+                    return [4 /*yield*/, funcionOpcion()];
+                case 20:
+                    _b.sent();
+                    return [3 /*break*/, 31];
+                case 21:
+                    console.log('Cual carro quieres Editar?');
+                    console.log(arregloEstudiantes);
+                    return [4 /*yield*/, prompts({
+                            type: 'number',
+                            name: 'id',
+                            message: 'Ingresa el ID del registro a Editar'
+                        })];
+                case 22:
+                    idABuscar5_1 = _b.sent();
+                    indiceEncontrado5 = arregloEstudiantes.findIndex(// return CONDICION ->
+                    function (valorActual) {
+                        return valorActual.id == idABuscar5_1.id; // Nos devuelve el INDICE
+                    } // Si encuentra nos devuelve el indice
+                    // No encuentra
+                    );
+                    console.log('Indice encontrado:', indiceEncontrado5);
+                    return [4 /*yield*/, prompts({
+                            type: 'text',
+                            name: 'precio',
+                            message: 'Ingresa el nuevo precio'
+                        })];
+                case 23:
+                    precioAEditar = _b.sent();
+                    arregloEstudiantes[indiceEncontrado5].precio = precioAEditar.precio;
+                    console.log(arregloEstudiantes);
+                    return [4 /*yield*/, funcionOpcion()];
+                case 24:
+                    _b.sent();
+                    return [3 /*break*/, 31];
+                case 25: return [4 /*yield*/, prompts({
                         type: 'text',
                         name: 'nombre',
                         message: 'Buscar por ID o por NOMBRE'
@@ -188,20 +304,26 @@ function main() {
                         name: 'id',
                         message: 'Buscar por ID o por NOMBRE'
                     })];
-                case 11:
+                case 26:
                     buscar_1 = _b.sent();
                     estudianteEncontrado = arregloEstudiantes.find(function (valorActual) {
                         return valorActual.nombre || valorActual.id == buscar_1.nombre && buscar_1.id;
                     });
                     console.log(estudianteEncontrado);
                     return [4 /*yield*/, funcionOpcion()];
-                case 12:
+                case 27:
                     _b.sent();
-                    return [3 /*break*/, 14];
-                case 13:
+                    return [3 /*break*/, 31];
+                case 28:
+                    console.log(arregloEstudiantes);
+                    return [4 /*yield*/, funcionOpcion()];
+                case 29:
+                    _b.sent();
+                    _b.label = 30;
+                case 30:
                     console.log("\nHASTA LUEGO!!");
-                    return [3 /*break*/, 14];
-                case 14:
+                    return [3 /*break*/, 31];
+                case 31:
                     arregloTexto = JSON.stringify(arregloEstudiantes);
                     // JSON.stringify -> Convierte objeto o arreglo en memoria
                     //                -> a texto
