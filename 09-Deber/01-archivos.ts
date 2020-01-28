@@ -1,6 +1,6 @@
 import { leerArchivo } from "./02-leer-archivo";
 import { escribirArchivo } from "./03-escribir-archivo";
-import { Estudiante } from "./interfaces/estudiante.interface";
+import { carro } from "./interfaces/carro.interface";
 import * as prompts from 'prompts';
 import { opcionInterface } from "./interfaces/opcion.interface";
 async function main(){
@@ -9,7 +9,7 @@ async function main(){
     const contenidoArchivo = leerArchivo('./ejemplo.txt');
     console.log('contenidoArchivo', contenidoArchivo);
     let arregloCargadoDeArchivo; // undefined
-    try{
+try{
         arregloCargadoDeArchivo = JSON.parse(contenidoArchivo);
     } catch(error){
         arregloCargadoDeArchivo = [
@@ -24,6 +24,9 @@ async function main(){
     let contador = 3;
 
     // OPERADORES
+
+
+
     let minimoId = -1;
     arregloCargadoDeArchivo
         .forEach( // NO ENVIA NADA y NO DEVUELVE NADA
@@ -38,91 +41,72 @@ async function main(){
     minimoId = minimoId + 1;
     contador = minimoId;
 
-            const arregloEstudiantes: Estudiante[] = arregloCargadoDeArchivo;
+            const arregloCarros: carro[] = arregloCargadoDeArchivo;
             const arregloPreguntas = [
-                { 
+                {
                     type: 'text',
                     name: 'nombre',
                     message: 'Ingresa tu marca'
-                }
-                { 
+                },
+                {
                     type: 'text',
                     name: 'modelo',
                     message: 'Ingresa tu modelo'
-                }
-                { 
+                },
+                {
                     type: 'number',
                     name: 'anio',
                     message: 'Ingresa tu anio'
-                }
-                { 
+                },
+                {
                     type: 'text',
                     name: 'origen',
                     message: 'Ingresa tu origen'
-                }
-                { 
+                },
+                {
                     type: 'number',
                     name: 'precio',
                     message: 'Ingresa tu precio'
                 }
             ];
-        
+
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         console.log("\nESCOGA UNA LA ACCION QUE DESEA REALIZAR\n");
-        console.log("1.anadir dos datos");
+        console.log("1   Anadir un nuevo carro");
         console.log("2.1 Editar el carro(nombre)");
         console.log("2.2 Editar el carro(modelo)");
         console.log("2.3 Editar el carro(anio)");
         console.log("2.4 Editar el carro(origen)");
         console.log("2.5 Editar el carro(precio)");
-        console.log("3.buscar un carro");
-        console.log("4.Agregar una pelicula");
-        console.log("5.Salir\n");
+        console.log("3   Buscar un carro");
+        console.log("4   Eliminar un carro");
+        console.log("5   Salir\n");
         const opcion = await funcionOpcion();
         switch(opcion)
         {
             case 1:
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            const respuestaEstudianteUno = await prompts(arregloPreguntas);
+            const respuestaCarroUno = await prompts(arregloPreguntas);
             const nuevoRegistroUno = {
                 id: contador,
-                nombre: respuestaEstudianteUno.nombre,
-                modelo: respuestaEstudianteUno.modelo,
-                anio: respuestaEstudianteUno.anio,
-                origen: respuestaEstudianteUno.origen,
-                precio: respuestaEstudianteUno.precio
+                nombre: respuestaCarroUno.nombre,
+                modelo: respuestaCarroUno.modelo,
+                anio: respuestaCarroUno.anio,
+                origen: respuestaCarroUno.origen,
+                precio: respuestaCarroUno.precio
             };
             contador = contador + 1;
-            arregloEstudiantes.push(nuevoRegistroUno);
-        
-        
+            arregloCarros.push(nuevoRegistroUno);
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-            const respuestaEstudianteDos = await prompts(arregloPreguntas);
-            const nuevoRegistroDos = {
-                id: contador,
-                nombre: respuestaEstudianteDos.nombre,
-                modelo: respuestaEstudianteDos.modelo,
-                anio: respuestaEstudianteDos.anio,
-                origen: respuestaEstudianteDos.origen,
-                precio: respuestaEstudianteDos.precio
-            };
-            contador = contador + 1;
-            arregloEstudiantes.push(nuevoRegistroDos);
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
             console.log('contenidoArchivo', contenidoArchivo);
             await funcionOpcion();
             break;
-            /*
-            await buscarPelicula(directorio);
-                await esperear();
-                await menu(directorio);
-                break;
-                */
+            //////////////////////////////////////////////////////////////////////////
             case 2.1:
                 console.log('Cual carro quieres Editar?');
-                console.log(arregloEstudiantes);
-
-
+                console.log(arregloCarros);
+                ////////////////////////////////////////////////////////////////////////
                 const idABuscar = await prompts(
                     {
                         type: 'number',
@@ -130,7 +114,7 @@ async function main(){
                         message: 'Ingresa el ID del registro a Editar'
                 }
                 )
-                const indiceEncontrado = arregloEstudiantes.findIndex( // return CONDICION ->
+                const indiceEncontrado = arregloCarros.findIndex( // return CONDICION ->
                     function (valorActual,){
                         return valorActual.id == idABuscar.id; // Nos devuelve el INDICE
                     } // Si encuentra nos devuelve el indice
@@ -145,13 +129,13 @@ async function main(){
                     message: 'Ingresa el nuevo nombre'
                 }
                 )
-                arregloEstudiantes[indiceEncontrado].nombre = nombreAEditar.nombre;
-                console.log(arregloEstudiantes);
+                arregloCarros[indiceEncontrado].nombre = nombreAEditar.nombre;
+                console.log(arregloCarros);
                 await funcionOpcion();
                 break;
             case 2.2:
                 console.log('Cual carro quieres Editar?');
-                console.log(arregloEstudiantes);
+                console.log(arregloCarros);
 
 
                 const idABuscar2 = await prompts(
@@ -161,7 +145,7 @@ async function main(){
                         message: 'Ingresa el ID del registro a Editar'
                 }
                 )
-                const indiceEncontrado2 = arregloEstudiantes.findIndex( // return CONDICION ->
+                const indiceEncontrado2 = arregloCarros.findIndex( // return CONDICION ->
                     function (valorActual,){
                         return valorActual.id == idABuscar2.id; // Nos devuelve el INDICE
                     } // Si encuentra nos devuelve el indice
@@ -176,13 +160,13 @@ async function main(){
                     message: 'Ingresa el nuevo modelo'
                 }
                 )
-                arregloEstudiantes[indiceEncontrado2].modelo = modeloAEditar.modelo;
-                console.log(arregloEstudiantes);
+                arregloCarros[indiceEncontrado2].modelo = modeloAEditar.modelo;
+                console.log(arregloCarros);
                 await funcionOpcion();
                 break;
             case 2.3:
                 console.log('Cual carro quieres Editar?');
-                console.log(arregloEstudiantes);
+                console.log(arregloCarros);
 
 
                 const idABuscar3 = await prompts(
@@ -192,7 +176,7 @@ async function main(){
                         message: 'Ingresa el ID del registro a Editar'
                 }
                 )
-                const indiceEncontrado3 = arregloEstudiantes.findIndex( // return CONDICION ->
+                const indiceEncontrado3 = arregloCarros.findIndex( // return CONDICION ->
                     function (valorActual,){
                         return valorActual.id == idABuscar3.id; // Nos devuelve el INDICE
                     } // Si encuentra nos devuelve el indice
@@ -207,13 +191,13 @@ async function main(){
                     message: 'Ingresa el nuevo anio'
                 }
                 )
-                arregloEstudiantes[indiceEncontrado3].anio = anioAEditar.anio;
-                console.log(arregloEstudiantes);
+                arregloCarros[indiceEncontrado3].anio = anioAEditar.anio;
+                console.log(arregloCarros);
                 await funcionOpcion();
                 break;
             case 2.4:
                 console.log('Cual carro quieres Editar?');
-                console.log(arregloEstudiantes);
+                console.log(arregloCarros);
 
 
                 const idABuscar4 = await prompts(
@@ -223,7 +207,7 @@ async function main(){
                         message: 'Ingresa el ID del registro a Editar'
                 }
                 )
-                const indiceEncontrado4 = arregloEstudiantes.findIndex( // return CONDICION ->
+                const indiceEncontrado4 = arregloCarros.findIndex( // return CONDICION ->
                     function (valorActual,){
                         return valorActual.id == idABuscar4.id; // Nos devuelve el INDICE
                     } // Si encuentra nos devuelve el indice
@@ -238,13 +222,13 @@ async function main(){
                     message: 'Ingresa el nuevo origen'
                 }
                 )
-                arregloEstudiantes[indiceEncontrado4].origen = origenAEditar.origen;
-                console.log(arregloEstudiantes);
+                arregloCarros[indiceEncontrado4].origen = origenAEditar.origen;
+                console.log(arregloCarros);
                 await funcionOpcion();
                 break;
             case 2.5:
                 console.log('Cual carro quieres Editar?');
-                console.log(arregloEstudiantes);
+                console.log(arregloCarros);
 
 
                 const idABuscar5 = await prompts(
@@ -254,7 +238,7 @@ async function main(){
                         message: 'Ingresa el ID del registro a Editar'
                 }
                 )
-                const indiceEncontrado5 = arregloEstudiantes.findIndex( // return CONDICION ->
+                const indiceEncontrado5 = arregloCarros.findIndex( // return CONDICION ->
                     function (valorActual,){
                         return valorActual.id == idABuscar5.id; // Nos devuelve el INDICE
                     } // Si encuentra nos devuelve el indice
@@ -269,8 +253,8 @@ async function main(){
                     message: 'Ingresa el nuevo precio'
                 }
                 )
-                arregloEstudiantes[indiceEncontrado5].precio = precioAEditar.precio;
-                console.log(arregloEstudiantes);
+                arregloCarros[indiceEncontrado5].precio = precioAEditar.precio;
+                console.log(arregloCarros);
                 await funcionOpcion();
                 break;
             case 3:
@@ -278,14 +262,14 @@ async function main(){
                     type: 'text',
                     name: 'nombre',
                     message: 'Buscar por ID o por NOMBRE'
-                }
+                },
                 {
                     type: 'number',
                     name: 'id',
                     message: 'Buscar por ID o por NOMBRE'
                 }
                 );
-                const estudianteEncontrado = arregloEstudiantes.find(
+                const estudianteEncontrado = arregloCarros.find(
                             function(valorActual){
                                 return valorActual.nombre||valorActual.id == buscar.nombre && buscar.id ;
                             }
@@ -293,16 +277,8 @@ async function main(){
                 console.log(estudianteEncontrado);
                 await funcionOpcion();
                 break;
-                /*
-                directorio = await eliminarPelicula(directorio);
-                console.log("\nLas peliculas actuales son:\n");
-                await imprimirPeliculas(directorio);
-                await esperear()
-                await menu(directorio);
-                break;
-                */
             case 4:
-                console.log(arregloEstudiantes);
+                console.log(contenidoArchivo);
                 await funcionOpcion();
             default:
                 console.log("\nHASTA LUEGO!!");
@@ -311,9 +287,7 @@ async function main(){
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    const arregloTexto = JSON.stringify(arregloEstudiantes);
-    // JSON.stringify -> Convierte objeto o arreglo en memoria
-    //                -> a texto
+    const arregloTexto = JSON.stringify(arregloCarros);
     console.log(arregloTexto);
     escribirArchivo(
         './ejemplo.txt',
@@ -325,7 +299,7 @@ async function main(){
 /////////////////////////////////////
 async function funcionOpcion()
 {
-    const opcion = 
+    const opcion =
     {
         type:'number',
         name:'numeroDeOpcion',
