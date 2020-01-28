@@ -1,14 +1,16 @@
 {
-    "name": "package",
+    "name": "08-archivos",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "(tsc 02-crud.ts --target ES5|| echo) && node 02-crud.js",
-        "puto": "(tsc Deber-02-01.ts --target ES5|| echo) && node Deber-02-01.js"
+        "start": "(tsc 01-archivos.ts --target ES5|| echo) && node 01-archivos.js"
     },
     "author": "",
     "license": "ISC",
+    "devDependencies": {
+        "@types/node": "^13.1.8"
+    },
     "dependencies": {
         "prompts": "^2.3.0"
     }

@@ -4,8 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "(tsc 02-crud.ts --target ES5|| echo) && node 02-crud.js",
-        "puto": "(tsc Deber-02-01.ts --target ES5|| echo) && node Deber-02-01.js"
+        "start": "(tsc Deber-02-01.ts || echo) && node Deber02-01.js"
     },
     "author": "",
     "license": "ISC",

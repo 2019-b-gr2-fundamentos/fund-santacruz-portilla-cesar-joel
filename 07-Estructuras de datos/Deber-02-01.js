@@ -38,86 +38,93 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var prompts = require("prompts");
 function main() {
-    obtenerDatosAnimalPerritoSincrono()
+    //obtenerDatosCarros()
+    //obtenerOpciones()
+    bienvenida()
         .then()
         .catch();
 }
-/*
-function obtenerDatosAnimalPerrito(){
-
-    //paradigma de programacion
-
-    //SINCRONO VS ASINCRONO
-    console.log('Inicio');
-
-    const promesaEdad = prompts({
-        type: 'number',
-        name: 'edad',
-        message: 'puedes darme tu edad?'
-    })
-    console.log(promesaEdad);
-    promesaEdad
-    .then(//ok
-        (datos)=>{
-            console.log('datos',datos); //AQUI PUEDO SEGUIR
-
-            /////
-            const promesaNombre = prompts({
-                type: 'text',
-                name: 'nombre',
-                message: 'puedes darme tu nombre?'
-            });
-            promesaNombre
-                .then(
-                    (datosNombre)=>{
-                        console.log('Nombre',datosNombre);
-                    }
-                )
-                .catch(
-                    (errorNombre)=>{
-                        console.log('Error',errorNombre)
-                    }
-                );
-            /////
-        }
-    )
-    .catch(
-        (error)=>{
-            console.log('Error',error)
-        }
-    );
-    console.log('Fin');
-}
-*/
-function obtenerDatosAnimalPerritoSincrono() {
+function bienvenida() {
     return __awaiter(this, void 0, void 0, function () {
-        var preguntas, respuestaEdad;
+        var operacion, respuestaOperacion;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    console.log("seleccione que desea realizar \n 1.Crear una nueva entrada \n 2.editar la entrada \n 3.eliminar un elemento de la entrada \n 4.agregar elemento");
+                    operacion = {
+                        type: 'number',
+                        name: 'numero',
+                        message: 'respuesta'
+                    };
+                    return [4 /*yield*/, prompts(operacion)];
+                case 1:
+                    respuestaOperacion = _a.sent();
+                    console.log(respuestaOperacion);
+                    if (respuestaOperacion == 1) {
+                        obtenerDatosCarros();
+                    }
+                    else {
+                        if (respuestaOperacion == 2) {
+                            console.log("1.editar marca \n 2. editar modelo \n 3.editar placa");
+                        }
+                        else {
+                            console.log("errorsswsws");
+                        }
+                    }
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+function obtenerDatosCarros() {
+    return __awaiter(this, void 0, void 0, function () {
+        var carros, respuestaCarro;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     console.log('Inicio');
-                    preguntas = [
+                    carros = [
                         {
-                            type: 'number',
-                            name: 'edad',
-                            message: 'puedes darme tu edad?'
+                            type: 'text',
+                            name: 'marca',
+                            message: 'puedes darme la marca del carro?'
                         },
                         {
                             type: 'text',
-                            name: 'nombre',
-                            message: 'puedes darme tu nombre?'
+                            name: 'modelo',
+                            message: 'puedes darme el modelo del carro?'
                         },
                         {
                             type: 'text',
-                            name: 'cedula',
-                            message: 'puedes darme tu cedula?'
+                            name: 'placa',
+                            message: 'puedes darme la placa del carro?'
                         }
                     ];
-                    return [4 /*yield*/, prompts(preguntas)];
+                    return [4 /*yield*/, prompts(carros)];
                 case 1:
-                    respuestaEdad = _a.sent();
-                    console.log('respuesta', respuestaEdad);
+                    respuestaCarro = _a.sent();
+                    console.log('respuesta', respuestaCarro);
                     console.log('Fin');
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+function obtenerOpciones() {
+    return __awaiter(this, void 0, void 0, function () {
+        var opciones, opcionSeleccionada;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    opciones = {
+                        type: 'text',
+                        name: 'marca',
+                        message: 'puedes darme la marca del carro?'
+                    };
+                    return [4 /*yield*/, prompts(opciones)];
+                case 1:
+                    opcionSeleccionada = _a.sent();
+                    console.log(opcionSeleccionada);
                     return [2 /*return*/];
             }
         });
