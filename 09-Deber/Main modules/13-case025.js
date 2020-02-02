@@ -68,7 +68,7 @@ function caseTwoFive() {
                     });
                     console.log('Indice encontrado:', indiceEncontrado5);
                     return [4 /*yield*/, prompts({
-                            type: 'text',
+                            type: 'number',
                             name: 'precio',
                             message: 'Ingresa el nuevo precio'
                         })];
