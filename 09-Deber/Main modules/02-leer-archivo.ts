@@ -1,4 +1,4 @@
-import * as fs from 'fs';
+import * as fs from 'fs-extra';
 
 export function leerArchivo(path:string): string {
     const resultado = fs.readFileSync(
