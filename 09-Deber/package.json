@@ -4,7 +4,7 @@
     "description": "deberuno",
     "main": "index.js",
     "scripts": {
-        "test": "\"(tsc 00-main.ts --target ES5|| echo) && node 00-main.js\""
+        "test": "(tsc 00-main.ts --target ES5|| echo) && node 00-main.js"
     },
     "keywords": [
         "DeberUno"
